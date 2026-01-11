@@ -1,25 +1,25 @@
 # Cloud-Based Distributed Data Processing Service
 
-**Authors:**  
+Authors: 
 - أحمد فالح أبو جحجوح (120220173)  
 - عبد الرحمن علاء الجديلي (120220456)
 
-**Faculty of Information Technology**  
-**The Islamic University of Gaza**  
+Faculty of Information Technology
+The Islamic University of Gaza
 
-**Course:** Cloud and Distributed Systems (SICT 4313)  
-**Instructor:** Dr. Rebhi S. Baraka  
+Course: Cloud and Distributed Systems (SICT 4313)  
+Instructor: Dr. Rebhi S. Baraka  
 
 ---
 
-## Project Overview
+ Project Overview
 
-This project presents a **cloud-based distributed data processing service** built using **PySpark**. The service allows users to upload datasets and perform:
+This project presents a cloud-based distributed data processing service built using PySpark. The service allows users to upload datasets and perform:
 
-- **Descriptive statistical analysis**
-- **Machine learning tasks** including Decision Tree Classification, KMeans Clustering, FP-Growth frequent itemset mining, and Linear Regression.
+- Descriptive statistical analysis
+- Machine learning tasks including Decision Tree Classification, KMeans Clustering, FP-Growth frequent itemset mining, and Linear Regression.
 
-The system is designed to handle **large datasets** efficiently using distributed processing on multiple cores and ensures **scalable execution**.
+The system is designed to handle large datasets efficiently using distributed processing on multiple cores and ensures scalable execution.
 
 ---
 
@@ -53,19 +53,19 @@ The system is designed to handle **large datasets** efficiently using distribute
 
 ## Architecture
 
-The service follows a **three-layer architecture**:
+The service follows a three-layer architecture:
 
-1. **User Interface Layer**
-   - Implemented using **Jupyter Notebook** and **ipywidgets**
+1. User Interface Layer
+   - Implemented using Jupyter Notebook and ipywidgets
    - Interactive selection of tasks and parameters
    - Dynamic target column selection for ML tasks
 
-2. **Processing Layer**
-   - **Spark Core**: distributed computation
-   - **Spark SQL**: data loading and transformations
-   - **Spark MLlib**: machine learning pipelines
+2. Processing Layer
+   - Spark Core: distributed computation
+   - Spark SQL: data loading and transformations
+   - Spark MLlib: machine learning pipelines
 
-3. **Cloud Storage Layer**
+3. Cloud Storage Layer
    - Cloud storage (local workspace on Kaggle)
    - Stores uploaded datasets and result files (CSV, TXT)
 
@@ -73,16 +73,16 @@ The service follows a **three-layer architecture**:
 
 ### Machine Learning Pipelines
 
-Each ML algorithm follows a **standard Spark ML pipeline**:
+Each ML algorithm follows a standard Spark ML pipeline:
 
 1. Data preprocessing (handling missing values, categorical indexing)
-2. Feature vector assembly with **VectorAssembler**
+2. Feature vector assembly with VectorAssembler
 3. Model training
 4. Prediction
 5. Evaluation (Accuracy, RMSE)
 6. Result storage in cloud directory
 
-**Supported ML Algorithms:**
+Supported ML Algorithms:
 
 - Decision Tree Classifier  
 - KMeans Clustering  
@@ -93,8 +93,8 @@ Each ML algorithm follows a **standard Spark ML pipeline**:
 
 ## Implementation
 
-- **Language:** Python 3.x  
-- **Libraries:**
+- Language: Python 3.x  
+- Libraries:
   - PySpark [1]  
   - Pandas [2]  
   - ipywidgets [3]  
@@ -108,7 +108,7 @@ Each ML algorithm follows a **standard Spark ML pipeline**:
 
 ## Performance Testing (1248 Node Simulation)
 
-- Tested **1, 2, 4, 8 cores** on Kaggle environment  
+- Tested 1, 2, 4, 8 cores on Kaggle environment  
 - Execution results for Decision Tree Classification:
 
 | Cores | Execution Time (sec) | Speedup | Efficiency | Accuracy |
@@ -118,6 +118,6 @@ Each ML algorithm follows a **standard Spark ML pipeline**:
 | 4     | 85.89              | 1.83    | 0.46       | 1.0      |
 | 8     | 81.84              | 1.92    | 0.24       | 1.0      |
 
-- Shows **scalability** of Spark distributed computation.  
+- Shows scalability of Spark distributed computation.  
 - Speedup and efficiency calculated as:
 
